@@ -25,8 +25,11 @@ model: sonnet
 ```
 ① Higgsfield MCP (generate_image 툴이 보이면)
    - 6장은 generate_image_batch로 한 번에 요청 → jobs_wait → 결과 URL 받기
-   - 모델이 애매하면 models_explore(action:'recommend') 1회
-   - A안 단독컷 → remove_background → generate_3d (GLB)
+   - 이미지 모델은 gpt_image_2_5 (장당 0.25크레딧, 리허설 기준). 모델이 애매하면 models_explore(action:'recommend') 1회
+   - 일부가 429(rate limit)로 submission_failed면 그 항목만 다시 요청해요 (제출 실패분은 과금 없음)
+   - A안 단독컷 → remove_background → generate_3d(model: sam_3_3d, 텍스처 포함 1크레딧)
+     다른 3D 모델은 get_cost:true로 먼저 비용을 확인하고, 20크레딧이 넘으면 쓰지 않아요
+     (리허설 기준: image_to_3d 텍스처 30 / 텍스처 없음 20, tripo_h3_1 9)
    - 결과 URL을 Bash curl로 runs/<RUN>/images/ 에 저장
 
 ② fal.ai (00-tools.md에 FAL_KEY 있음)
