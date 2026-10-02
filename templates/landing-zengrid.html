@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{PRODUCT_NAME}}</title>
+<!--
+  초록 스튜디오 · 검증용 가상 상세페이지 템플릿 (ZenGrid, DESIGN.md 기준)
+  05 검증 설계자가 runs/<RUN>/landing.html 로 복사한 뒤 중괄호 두 겹으로 표시한 빈칸만 채워요.
+  규칙: 그림자 없음 · stone/sage 색만 · 이미지 모서리 0, 위에 아무것도 얹지 않음 · 왼쪽 정렬
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&family=DM+Sans:wght@400;500&family=Fira+Code&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Colors */
+    --stone: #78716C; --stone-hover: #57534E; --stone-active: #44403C; --sage: #A8A29E;
+    --surface-base: #FAF9F6; --surface-raised: #FFFFFF; --surface-sunken: #F5F4F1;
+    --content-primary: #44403C; --content-secondary: #78716C; --content-tertiary: #A8A29E;
+    --border-default: #E7E5E4; --border-strong: #A8A29E; --warning: #CA8A04;
+    /* Spacing */
+    --sp-1: 6px; --sp-2: 12px; --sp-3: 24px; --sp-4: 36px; --sp-5: 48px; --sp-6: 72px;
+    /* Radius */
+    --radius-sm: 2px; --radius-md: 4px;
+    /* Type: 영문 글꼴을 앞에, 한글은 Noto Sans KR로 자동 대체 */
+    --font-head: 'Raleway', 'Noto Sans KR', sans-serif;
+    --font-body: 'DM Sans', 'Noto Sans KR', sans-serif;
+    --font-mono: 'Fira Code', 'Noto Sans KR', monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface-base); color: var(--content-primary); font-family: var(--font-body); font-size: 15px; line-height: 1.7; word-break: keep-all; }
+  .page { max-width: 480px; margin: 0 auto; padding-bottom: 96px; }
+  .gutter { padding-inline: var(--sp-3); }
+  img { display: block; width: 100%; border-radius: 0; }
+
+  .eyebrow { font-family: var(--font-body); font-weight: 500; font-size: 11px; line-height: 1.4; letter-spacing: .12em; text-transform: uppercase; color: var(--content-tertiary); margin: 0; }
+  h1 { font-family: var(--font-head); font-weight: 300; font-size: 32px; line-height: 1.4; letter-spacing: -.02em; margin: 0; }
+  h2 { font-family: var(--font-head); font-weight: 300; font-size: 24px; line-height: 1.45; letter-spacing: -.01em; margin: 0; }
+  h4 { font-family: var(--font-head); font-weight: 500; font-size: 16px; line-height: 1.5; margin: 0; }
+  .small { font-size: 13px; line-height: 1.6; color: var(--content-secondary); margin: 0; }
+  .tiny { font-size: 11px; font-weight: 500; line-height: 1.4; color: var(--content-tertiary); margin: 0; }
+  .mono { font-family: var(--font-mono); font-size: 13px; line-height: 1.6; }
+
+  .topbar { display: flex; justify-content: space-between; align-items: center; padding-block: var(--sp-3); }
+  .brand { color: var(--content-primary); }
+  .chip-draft { font-size: 11px; font-weight: 500; line-height: 1.4; padding: 3px 10px; border-radius: var(--radius-md); color: var(--warning); background: rgba(202, 138, 4, .08); }
+
+  .caption { padding-block: var(--sp-2); }
+  .title { padding-top: var(--sp-4); padding-bottom: var(--sp-6); display: grid; gap: var(--sp-3); }
+  .title .heading { display: grid; gap: var(--sp-2); }
+  .lead { color: var(--content-secondary); margin: 0; }
+  .price { display: flex; align-items: baseline; gap: var(--sp-2); }
+  .price .num { font-family: var(--font-head); font-weight: 300; font-size: 32px; line-height: 1.15; }
+
+  .btn { display: inline-flex; justify-content: center; align-items: center; height: 48px; padding: 14px 28px; border: 0; border-radius: var(--radius-md); background: var(--stone); color: #FFFFFF; font-family: var(--font-body); font-weight: 500; font-size: 15px; cursor: pointer; width: 100%; }
+  .btn:hover { background: var(--stone-hover); }
+  .btn:active { background: var(--stone-active); }
+  .btn:focus-visible { outline: 2px solid var(--stone-active); outline-offset: 2px; }
+
+  section { padding-bottom: var(--sp-6); display: grid; gap: var(--sp-4); }
+  section > header { display: grid; gap: var(--sp-2); }
+
+  .numbered { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--border-default); }
+  .numbered li { display: grid; grid-template-columns: 24px 1fr; gap: var(--sp-3); padding-block: var(--sp-3); border-top: 1px solid var(--border-default); }
+  .numbered .n { font-family: var(--font-mono); font-size: 13px; color: var(--content-tertiary); line-height: 1.6; }
+  .numbered .body { display: grid; gap: var(--sp-1); }
+
+  .figure { background: var(--surface-sunken); border: 1px solid var(--border-default); border-radius: var(--radius-md); padding: var(--sp-3); }
+  .figure svg { display: block; width: 100%; height: auto; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-2); }
+  .grid-2 figure { margin: 0; display: grid; gap: var(--sp-2); align-content: start; }
+  .grid-2 img { aspect-ratio: 4 / 5; object-fit: cover; }
+  .grid-2 figcaption { display: grid; gap: var(--sp-1); }
+
+  .spec { margin: 0; border-top: 1px solid var(--border-default); }
+  .spec div { display: grid; grid-template-columns: 72px 1fr; gap: var(--sp-3); padding-block: var(--sp-2); border-bottom: 1px solid var(--border-default); font-size: 13px; line-height: 1.6; }
+  .spec dt { color: var(--content-tertiary); }
+  .spec dd { margin: 0; color: var(--content-primary); }
+
+  .card { background: var(--surface-raised); border: 1px solid var(--border-default); border-radius: var(--radius-md); padding: var(--sp-3); }
+
+  .bottombar { position: fixed; left: 0; right: 0; bottom: 0; background: var(--surface-raised); border-top: 1px solid var(--border-default); }
+  .bottombar .inner { max-width: 480px; margin: 0 auto; display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-2) var(--sp-3) calc(var(--sp-2) + env(safe-area-inset-bottom, 0px)); }
+  .bottombar .btn { flex: 1; }
+  .done { display: none; }
+  .done.show { display: block; }
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="topbar gutter">
+    <p class="eyebrow brand">{{BRAND_EN}}</p>
+    <span class="chip-draft">출시 전 · 시제품</span>
+  </div>
+
+  <img src="{{HERO_IMAGE}}" alt="{{HERO_ALT}}">
+  <p class="tiny caption gutter">AI 생성 시안 · 실제 제품과 다를 수 있어요</p>
+
+  <div class="title gutter">
+    <div class="heading">
+      <p class="eyebrow">{{EYEBROW_EN}}</p>
+      <h1>{{HEADLINE_LINE1}}<br>{{HEADLINE_LINE2}}</h1>
+    </div>
+    <p class="lead">{{LEAD}}</p>
+    <div class="price"><span class="num">{{PRICE_NUMBER}}</span><span class="small">원 · 출시 예정가</span></div>
+    <button class="btn" type="button" data-notify>출시되면 알림 받기</button>
+    <p class="small done" role="status">신청됐어요. 출시되면 가장 먼저 알려 드릴게요.</p>
+  </div>
+
+  <section class="gutter" aria-labelledby="why">
+    <header><p class="eyebrow">Why</p><h2 id="why">{{WHY_HEADLINE}}</h2></header>
+    <ol class="numbered">
+      <li><span class="n">01</span><div class="body"><h4>{{BENEFIT1_TITLE}}</h4><p class="small">{{BENEFIT1_DESC}}</p></div></li>
+      <li><span class="n">02</span><div class="body"><h4>{{BENEFIT2_TITLE}}</h4><p class="small">{{BENEFIT2_DESC}}</p></div></li>
+      <li><span class="n">03</span><div class="body"><h4>{{BENEFIT3_TITLE}}</h4><p class="small">{{BENEFIT3_DESC}}</p></div></li>
+    </ol>
+  </section>
+
+  <section class="gutter" aria-labelledby="how">
+    <header><p class="eyebrow">How</p><h2 id="how">{{HOW_HEADLINE}}</h2><p class="small">{{HOW_SUB}}</p></header>
+    <div class="figure">
+      <!-- 단면도 자리: 컨셉의 구조를 stone/sage 단색으로 그린 단면도. 레이어 이름은 tiny 글씨로 오른쪽에. -->
+      {{HOW_FIGURE_SVG}}
+      <p class="tiny" style="margin-top: var(--sp-2)">FIG. 1 · 단면 예시, 비율은 실제와 달라요</p>
+    </div>
+  </section>
+
+  <section class="gutter" aria-labelledby="also">
+    <header><p class="eyebrow">Also</p><h2 id="also">같이 고민 중인 시안</h2></header>
+    <div class="grid-2">
+      <figure><img src="{{ALT1_IMAGE}}" alt="{{ALT1_NAME}}"><figcaption><p class="eyebrow">No. 02</p><h4>{{ALT1_NAME}}</h4><p class="small">{{ALT1_DESC}}</p></figcaption></figure>
+      <figure><img src="{{ALT2_IMAGE}}" alt="{{ALT2_NAME}}"><figcaption><p class="eyebrow">No. 03</p><h4>{{ALT2_NAME}}</h4><p class="small">{{ALT2_DESC}}</p></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="gutter" aria-labelledby="spec">
+    <header><p class="eyebrow">Spec</p><h2 id="spec">제품 정보</h2></header>
+    <dl class="spec">
+      <div><dt>크기</dt><dd class="mono">{{SPEC_SIZE}}</dd></div>
+      <div><dt>소재</dt><dd>{{SPEC_MATERIAL}}</dd></div>
+      <div><dt>식물</dt><dd>{{SPEC_PLANT}}</dd></div>
+      <div><dt>물 보충</dt><dd>{{SPEC_WATER}}</dd></div>
+      <div><dt>관리</dt><dd>{{SPEC_CARE}}</dd></div>
+    </dl>
+    <div class="card"><p class="small">지금은 출시 전 시제품 단계예요.<br>가격과 사양은 바뀔 수 있어요.</p></div>
+  </section>
+</main>
+
+<div class="bottombar">
+  <div class="inner">
+    <div><p class="tiny">출시 예정가</p><p class="mono" style="margin:0">{{PRICE_NUMBER}}원</p></div>
+    <button class="btn" type="button" data-notify>출시되면 알림 받기</button>
+  </div>
+</div>
+
+<script>
+  // 검증용: 버튼을 누른 횟수만 이 브라우저에 기록해요. 실제 수집은 폼 도구(구글폼 등)로 연결해요.
+  document.querySelectorAll('[data-notify]').forEach(b => b.addEventListener('click', () => {
+    document.querySelector('.done').classList.add('show');
+    try { localStorage.setItem('notify-clicks', String(Number(localStorage.getItem('notify-clicks') || 0) + 1)); } catch (e) {}
+  }));
+</script>
+</body>
+</html>

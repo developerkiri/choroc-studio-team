@@ -18,7 +18,7 @@ description: 초록 스튜디오 식물오브제 디자인 파이프라인. "초
 | 2 | 컨셉 디자이너 | `.claude/agents/02-concept-designer.md` | Opus 5.5 | 텍스트만 |
 | 3 | 비주얼 제너레이터 | `.claude/agents/03-visual-generator.md` | Sonnet 5.5 | Higgsfield MCP, fal.ai API (대체) |
 | 4 | 레드팀 | `.claude/agents/04-red-team.md` | Opus 5.5 | Read (이미지 확인) |
-| 5 | 검증 설계자 | `.claude/agents/05-validation-designer.md` | Sonnet 5.5 | Figma MCP |
+| 5 | 검증 설계자 | `.claude/agents/05-validation-designer.md` | Sonnet 5.5 | DESIGN.md + HTML 템플릿, Figma(선택) |
 | 6 | 아카이비스트 | `.claude/agents/06-archivist.md` | Haiku 4.5 | Notion MCP |
 | — | 포트폴리오 에디터 | `.claude/agents/07-portfolio-editor.md` | Opus 5.5 | Notion MCP, Figma MCP (따로 실행) |
 
@@ -35,11 +35,19 @@ description: 초록 스튜디오 식물오브제 디자인 파이프라인. "초
 4. 레드팀          → runs/<RUN>/04-redteam.md         (PASS / REVISE)
    └ REVISE → 2번으로 1회 되돌림 (02-concepts-v2.md, 03-visuals-v2.md, 04-redteam-v2.md)
    └ 두 번째도 REVISE면 해당 컨셉을 "보류"로 표시하고 계속 진행
-5. 검증 설계자      → runs/<RUN>/05-validation-kit.md (+ Figma 링크)
+5. 검증 설계자      → runs/<RUN>/landing.html (ZenGrid) + 05-validation-kit.md (+ Figma, 템플릿 있을 때)
 6. 아카이비스트     → runs/<RUN>/SUMMARY.md + Notion DB 1행
 
 <RUN> = YYYY-MM-DD-HHMM
 ```
+
+## 디자인 기준
+
+- 화면 결과물(상세페이지, 포트폴리오)은 모두 `DESIGN.md`(ZenGrid + 한글 적용 메모)를 따라요.
+- 상세페이지는 `templates/landing-zengrid.html`을 채워서 만들어요. 구조와 CSS는 고치지 않아요.
+- **Figma 템플릿 (선택)**: ZenGrid 변수·스타일·컴포넌트가 들어 있는 파일이에요. 아래 값을 채우면 검증 설계자가 그 파일 안에서 v3 프레임을 복제해 써요. 비어 있으면 HTML만 만들어요.
+  - 파일 키: (비어 있음)
+  - 상세페이지 프레임 노드 ID: (비어 있음)
 
 ## 운영 원칙
 

@@ -29,4 +29,4 @@ model: opus
 
 ## 출력
 - `portfolio/case-study.md`
-- Figma MCP가 있으면 1440 폭 프레임 6개로 레이아웃 초안을 만들고 링크를 적어요.
+- 레이아웃은 `DESIGN.md`(ZenGrid)를 따라요. 기본은 `portfolio/case-study.html`(한 장짜리 HTML), Figma는 TEAM.md의 Figma 템플릿이 있을 때만 써요.

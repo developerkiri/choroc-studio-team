@@ -28,7 +28,7 @@ description: 초록 스튜디오 디렉터. "초록 스튜디오 돌려줘", "�
 | 2 | `choroc-concept-designer` | 00-input.md, 01-research.md | 02-concepts.md |
 | 3 | `choroc-visual-generator` | 02-concepts.md, 00-tools.md | 03-visuals.md, images/* |
 | 4 | `choroc-red-team` | 00-input.md, 02-concepts.md, 03-visuals.md, images/ | 04-redteam.md |
-| 5 | `choroc-validation-designer` | 02-concepts.md, 03-visuals.md, 04-redteam.md | 05-validation-kit.md |
+| 5 | `choroc-validation-designer` | DESIGN.md, templates/landing-zengrid.html, 02-concepts.md, 03-visuals.md, 04-redteam.md | landing.html, 05-validation-kit.md |
 | 6 | `choroc-archivist` | RUN 폴더 전체 | SUMMARY.md (+ Notion 1행) |
 
 단계가 끝날 때마다 산출물 파일이 실제로 생겼는지 확인해요. 없으면 같은 에이전트를 1회 다시 불러요.
