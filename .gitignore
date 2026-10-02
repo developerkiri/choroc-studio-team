@@ -1,0 +1,6 @@
+.env
+.mcp.json
+input-brief.md
+runs/
+portfolio/
+__pycache__/

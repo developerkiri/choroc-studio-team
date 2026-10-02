@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "higgsfield": {
+      "type": "http",
+      "url": "REPLACE_WITH_HIGGSFIELD_MCP_URL"
+    },
+    "figma": {
+      "type": "http",
+      "url": "https://mcp.figma.com/mcp"
+    },
+    "notion": {
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "uibowl": {
+      "type": "http",
+      "url": "REPLACE_WITH_UIBOWL_MCP_URL"
+    }
+  }
+}

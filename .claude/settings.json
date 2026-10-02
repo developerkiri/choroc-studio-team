@@ -1,0 +1,12 @@
+{
+  "model": "opus",
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/fal_generate.py:*)",
+      "Bash(python3 scripts/naver_shopping.py:*)",
+      "Bash(mkdir -p runs/:*)",
+      "WebSearch",
+      "WebFetch"
+    ]
+  }
+}
