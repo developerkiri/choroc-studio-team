@@ -11,6 +11,7 @@ description: 초록 스튜디오 디렉터. "초록 스튜디오 돌려줘", "�
 
 1. 입력 파일을 정해요. 사용자가 경로를 주면 그 파일, 아니면 프로젝트 루트의 `input-brief.md`.
    없으면 `templates/input-brief.md`를 복사해 채워달라고 한 줄로 안내하고 멈춰요. (입력 없이 지어내지 않아요.)
+   입력이 문서 워크시트(표)로 주어지면 칸 이름 그대로 `templates/input-brief.md`의 같은 제목 아래에 옮겨 적어 `input-brief.md`를 만들어요. 빈 칸은 비워 둬요.
 2. `RUN=$(date +%Y-%m-%d-%H%M)` 으로 `runs/$RUN/images/` 폴더를 만들어요.
 3. 입력 파일을 `runs/$RUN/00-input.md`로 복사해요.
 4. 사용 가능한 툴을 한 번 확인하고 `runs/$RUN/00-tools.md`에 적어요:
