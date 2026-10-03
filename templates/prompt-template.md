@@ -14,7 +14,9 @@
 
 ## 고정 문구 (6장 모두 같게)
 - **단독컷**: `product photo, 3/4 view, seamless white background, softbox lighting, sharp focus, no text, no logo`
-- **연출컷**: `on a small studio-apartment desk beside a monitor and keyboard, warm afternoon window light, shallow depth of field, no people, no text, no logo`
+- **연출컷**: `[장소], warm afternoon window light, shallow depth of field, no people, no text, no logo`
+  - `[장소]`는 컨셉의 **사용 장면**을 그대로 영어로 옮겨요 (예: `on a desk to the left of an open 14-inch laptop`). 비어 있으면 `on a small studio-apartment desk beside a monitor and keyboard`.
+  - 장소만 컨셉마다 다르고, 빛·심도 문구는 6장 모두 같게 둬요. (초기 버전은 장소까지 고정해서, 노트북 옆에 두는 컨셉도 모니터 옆으로 찍혔어요.)
 
 ## 조합 순서
 ```
