@@ -5,7 +5,7 @@
 ## 칸
 | 칸 | 설명 | 예시 |
 |---|---|---|
-| 제품 | 무엇인지 + 식물 | small self-watering moss planter |
+| 제품 | 무엇인지 + 식물. 화분이 아니면 제품군 그대로 | small self-watering moss planter / modular steel desk tray with air plant |
 | 형태 | 컨셉 보드의 형태 언어 | rounded rectangular, stepped edges |
 | 소재·마감 | 소재 + 컬러 2개 | matte sage-green ceramic, frosted glass water tank |
 | 크기 단서 | 책상 위 크기감 | palm-sized, next to a 24-inch monitor |
